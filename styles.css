@@ -1,0 +1,620 @@
+/* =============================== */
+/* NOUVEAUX STYLES POUR PAGES INTERNES */
+/* =============================== */
+/* Variables et Réinitialisation de base */
+:root {
+    --color-dark: #1e1e2f; /* Couleur de fond principale / Texte foncé */
+    --color-primary: #007bff; /* Bleu/couleur d'accentuation principale */
+    --color-secondary: #ffc107; /* Jaune/Or (pour le slogan, le logo, les CTA) */
+    --color-light: #f4f4f9; /* Arrière-plan clair */
+    --color-text-light: #ffffff;
+    --color-text-dark: #333333;
+    --font-family-main: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-main);
+    color: var(--color-text-dark);
+    background-color: var(--color-light);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+p {
+    font-weight: 300;
+}
+
+/* --- Boutons --- */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--color-dark);
+    color: var(--color-text-light);
+    border: 2px solid var(--color-dark);
+}
+
+.btn-primary:hover {
+    background-color: #000;
+}
+
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-dark);
+    border: 2px solid var(--color-secondary);
+}
+
+.btn-secondary:hover {
+    background-color: #e0a800;
+}
+
+/* --- Header / Navigation --- */
+.main-header {
+    background-color: var(--color-dark);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-text-light);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 40px; /* Taille du logo de l'aigle */
+    margin-right: 10px;
+ /* Rend le logo blanc ou clair pour le fond foncé */
+}
+
+.logo-text h1 {
+    font-size: 1.5em;
+    margin: 0;
+    color: var(--color-text-light);
+}
+
+.logo-text p {
+    font-size: 0.8em;
+    color: var(--color-secondary);
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.logo-container a {
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+    border-bottom: 2px solid var(--color-secondary);
+}
+
+/* --- Section Héro --- */
+.hero-section {
+    position: relative;
+    height: 500px; 
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Overlay sombre pour lisibilité */
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+    padding: 20px;
+    color: var(--color-text-light);
+}
+
+.hero-content h2 {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+}
+
+.hero-cta a {
+    margin-right: 15px;
+}
+
+/* --- Section Qui Sommes-Nous ? --- */
+.about-us-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 80px 20px;
+}
+
+.about-text {
+    flex: 2;
+}
+
+.about-text h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--color-dark);
+}
+
+.about-image {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- Section Solutions/Cartes --- */
+.products-showcase {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.products-showcase h3 {
+    font-size: 2em;
+    margin-bottom: 40px;
+    color: var(--color-dark);
+}
+
+.product-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background-color: var(--color-text-light);
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h4 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+    color: var(--color-dark);
+}
+
+.btn-card {
+    margin-top: 20px;
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+
+.card-motor .motor-img {
+    max-height: 80px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.card-contact {
+    background-color: var(--color-dark);
+    color: var(--color-text-light);
+}
+
+.card-contact p:last-of-type {
+    color: var(--color-secondary);
+}
+
+.card-contact .btn-primary {
+    background-color: var(--color-secondary);
+    color: var(--color-dark);
+    border-color: var(--color-secondary);
+}
+
+.card-contact .btn-primary:hover {
+    background-color: #e0a800;
+}
+
+/* --- Footer --- */
+.main-footer {
+    background-color: var(--color-dark);
+    color: var(--color-text-light);
+    padding: 20px 0;
+    margin-top: 40px;
+    font-size: 0.9em;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-content em {
+    color: var(--color-secondary);
+}
+
+.footer-links a {
+    color: var(--color-text-light);
+    text-decoration: none;
+    margin-left: 15px;
+    opacity: 0.8;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    color: var(--color-secondary);
+}
+
+/* --- Media Queries pour la responsivité de base --- */
+@media (max-width: 900px) {
+    .product-cards {
+        grid-template-columns: 1fr;
+    }
+    .about-us-section {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-image {
+        order: -1; /* Place l'image avant le texte sur mobile */
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    nav ul li a {
+        padding: 5px 10px;
+    }
+    .hero-content h2 {
+        font-size: 2em;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-links {
+        margin-top: 10px;
+    }
+}
+/* --- Bannières de Page (Page Drones et Moteurs) --- */
+.page-banner {
+    background-color: var(--color-dark); /* Fond sombre comme le header */
+    color: var(--color-text-light);
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom: 5px solid var(--color-secondary); /* Accent or */
+}
+
+.page-banner h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.page-banner p {
+    font-size: 1.1em;
+    opacity: 0.8;
+}
+
+/* --- DRONES Page Style --- */
+
+.drone-model-detail {
+    padding: 60px 20px;
+}
+
+.drone-model-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.drone-model-header h3 {
+    font-size: 2.2em;
+    color: var(--color-dark);
+}
+
+.drone-model-header .tagline {
+    color: var(--color-secondary);
+    font-style: italic;
+}
+
+.drone-grid {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.drone-image-section {
+    flex: 1;
+    max-width: 50%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.drone-image-section img {
+    width: 100%;
+    display: block;
+}
+
+.drone-specs-section {
+    flex: 1;
+    max-width: 50%;
+    padding: 20px;
+    background-color: var(--color-text-light);
+    border-left: 3px solid var(--color-secondary); /* Ligne d'accentuation */
+}
+
+.specs-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.specs-list li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #ddd;
+    font-weight: 300;
+}
+
+.specs-list li strong {
+    color: var(--color-dark);
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.applications {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+}
+
+.applications h4 {
+    margin-bottom: 10px;
+}
+
+.app-tag {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    margin: 5px;
+}
+
+.eagris-advantages {
+    background-color: #e0e0e8; /* Léger fond gris pour la section */
+    padding: 50px 0;
+    text-align: center;
+}
+
+.advantage-points {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.point {
+    max-width: 30%;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.point .icon {
+    font-size: 2em;
+    color: var(--color-secondary);
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* --- MOTEURS Page Style --- */
+
+.motor-range {
+    padding: 60px 20px;
+}
+
+.motor-product {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 50px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: var(--color-text-light);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.motor-product.reversed {
+    flex-direction: row-reverse; /* Pour inverser image et texte */
+}
+
+.motor-image-container {
+    flex: 1;
+    max-width: 300px;
+    text-align: center;
+}
+
+.motor-image-container img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+}
+
+.motor-details {
+    flex: 2;
+}
+
+.motor-details h4 {
+    font-size: 1.8em;
+    color: var(--color-dark);
+    margin-bottom: 5px;
+}
+
+.motor-details .tagline {
+    color: #666;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.specs-table {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+    font-size: 0.95em;
+    background-color: #f0f0f5;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.specs-table li {
+    background-color: var(--color-light);
+    padding: 8px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.specs-table li strong {
+    display: block;
+    font-size: 0.8em;
+    color: #888;
+    font-weight: 300;
+}
+
+.motor-advantages {
+    background-color: var(--color-dark);
+    color: var(--color-text-light);
+    padding: 50px 0;
+}
+
+.motor-advantages h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--color-secondary);
+}
+
+.motor-advantages ul {
+    list-style: none;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.motor-advantages ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 300;
+}
+
+.motor-advantages ul li strong {
+    color: var(--color-secondary);
+    font-weight: 600;
+}
+
+/* Media Query pour la responsivité */
+@media (max-width: 900px) {
+    .drone-grid,
+    .motor-product {
+        flex-direction: column;
+    }
+    .drone-image-section,
+    .drone-specs-section,
+    .motor-image-container,
+    .motor-details {
+        max-width: 100%;
+    }
+    .motor-product.reversed {
+        flex-direction: column; /* Annule l'inversion sur mobile */
+    }
+    .specs-table {
+        grid-template-columns: 1fr 1fr;
+    }
+    .advantage-points {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .point {
+        max-width: 100%;
+    }
+}
